@@ -8,7 +8,7 @@ const Theme = {
 };
 
 const refs = {
-  body: document.bodyс,
+  body: document.body,
   checkbox: document.querySelector('#theme-switch-toggle'),
   menu: document.querySelector('.js-menu'),
 };
