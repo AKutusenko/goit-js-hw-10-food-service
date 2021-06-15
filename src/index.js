@@ -8,23 +8,21 @@ const Theme = {
 };
 
 const refs = {
-  body: document.querySelector('body'),
+  body: document.bodyс,
   checkbox: document.querySelector('#theme-switch-toggle'),
   menu: document.querySelector('.js-menu'),
 };
 
 refs.checkbox.checked = JSON.parse(localStorage.getItem('checkboxStatus'));
 
-refs.checkbox.checked === true
-  ? refs.body.classList.add(Theme.DARK)
-  : refs.body.classList.add(Theme.LIGHT);
+refs.checkbox.checked ? refs.body.classList.add(Theme.DARK) : refs.body.classList.add(Theme.LIGHT);
 
 refs.checkbox.addEventListener('change', ifCheckboxWasChanged);
 
 makeMenuMarkup(menu);
 
 function ifCheckboxWasChanged(e) {
-  if (e.currentTarget.checked === true) {
+  if (e.currentTarget.checked) {
     refs.body.classList.add(Theme.DARK);
     refs.body.classList.remove(Theme.LIGHT);
 
